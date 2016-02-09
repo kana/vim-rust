@@ -20,15 +20,15 @@ function! rust#Jump(mode, function) range
 endfunction
 
 function! s:Jump_Back()
-	call search('{', 'b')
+	call search('{', 'bW')
 	keepjumps normal! w99[{
 endfunction
 
 function! s:Jump_Forward()
 	normal! j0
-	call search('{', 'b')
+	call search('{', 'bW')
 	keepjumps normal! w99[{%
-	call search('{')
+	call search('{', 'W')
 endfunction
 
 " Run {{{1
