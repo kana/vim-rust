@@ -107,7 +107,7 @@ command! -nargs=* -buffer RustEmitIr call rust#Emit("llvm-ir", <q-args>)
 command! -nargs=* -buffer RustEmitAsm call rust#Emit("asm", <q-args>)
 
 " See |:RustPlay| for docs
-command! -range=% RustPlay :call rust#Play(<count>, <line1>, <line2>, <f-args>)
+command! -range=% -buffer RustPlay :call rust#Play(<count>, <line1>, <line2>, <f-args>)
 
 " See |:RustFmt| for docs
 command! -buffer RustFmt call rustfmt#Format()
