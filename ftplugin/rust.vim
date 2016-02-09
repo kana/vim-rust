@@ -149,14 +149,14 @@ let b:undo_ftplugin = "
 		\|delcommand RustEmitIr
 		\|delcommand RustEmitAsm
 		\|delcommand RustPlay
-		\|nunmap <buffer> <D-r>
-		\|nunmap <buffer> <D-R>
-		\|nunmap <buffer> [[
-		\|nunmap <buffer> ]]
-		\|xunmap <buffer> [[
-		\|xunmap <buffer> ]]
-		\|ounmap <buffer> [[
-		\|ounmap <buffer> ]]
+		\|silent! nunmap <buffer> <D-r>
+		\|silent! nunmap <buffer> <D-R>
+		\|silent! nunmap <buffer> [[
+		\|silent! nunmap <buffer> ]]
+		\|silent! xunmap <buffer> [[
+		\|silent! xunmap <buffer> ]]
+		\|silent! ounmap <buffer> [[
+		\|silent! ounmap <buffer> ]]
 		\|set matchpairs-=<:>
 		\|unlet b:match_skip
 		\"
