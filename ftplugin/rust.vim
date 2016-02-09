@@ -83,7 +83,7 @@ onoremap <silent> <buffer> [[ :<C-u>call rust#Jump('o', 'Back')<CR>
 onoremap <silent> <buffer> ]] :<C-u>call rust#Jump('o', 'Forward')<CR>
 
 " %-matching. <:> is handy for generics.
-set matchpairs+=<:>
+setlocal matchpairs+=<:>
 " There are two minor issues with it; (a) comparison operators in expressions,
 " where a less-than may match a greater-than later on—this is deemed a trivial
 " issue—and (b) `Fn() -> X` syntax. This latter issue is irremediable from the
@@ -157,7 +157,7 @@ let b:undo_ftplugin = "
 		\|silent! xunmap <buffer> ]]
 		\|silent! ounmap <buffer> [[
 		\|silent! ounmap <buffer> ]]
-		\|set matchpairs-=<:>
+		\|setlocal matchpairs-=<:>
 		\|unlet b:match_skip
 		\"
 
