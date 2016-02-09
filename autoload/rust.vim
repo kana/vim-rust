@@ -20,15 +20,21 @@ function! rust#Jump(mode, function) range
 endfunction
 
 function! s:Jump_Back()
-	call search('{', 'bW')
+	if search('{', 'bW') == 0
+		return
+	endif
 	keepjumps normal! w99[{
 endfunction
 
 function! s:Jump_Forward()
+	let p = getpos('.')
 	normal! j0
 	call search('{', 'bW')
 	keepjumps normal! w99[{%
-	call search('{', 'W')
+	if search('{', 'W') == 0
+		call setpos('.', p)
+		return
+	endif
 endfunction
 
 " Run {{{1
